@@ -1,0 +1,484 @@
+/* Supprime les marges par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+    
+}
+
+body {
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    flex-direction: column; }
+
+.menu {
+    background-color: rgb(0, 0, 0);
+    /* fond noir foncé */
+    padding: 1rem 2rem;
+    /* espace intérieur */
+    display: flex;
+    /* mettre les éléments en ligne */
+    align-items: center;
+    /* aligner verticalement */
+    justify-content: space-between;
+    /* logo à gauche, liens à droite */ 
+    box-shadow: 0 2px 8px rgb(0, 0, 0);
+        /* ombre sous la barre */
+        position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+}
+
+    /* Le logo */
+.logo img {
+    margin-left: 50px;
+  height: 80px;                /* fixe la hauteur du logo */
+}
+
+/* Les liens de navigation */
+.menu-links {
+  display: flex;               /* mettre les liens en ligne */
+  gap: 2rem;                   /* espace entre les liens */
+}
+
+.menu-links a.active {
+    text-decoration: underline;
+    }
+
+/* Style des liens */
+.menu-links a {
+    font-size: 20px;
+    color: rgb(255, 96, 96);
+    /* texte blanc */
+    text-decoration: none;
+    /* pas de soulignement */
+    font-weight: bold;
+    /* texte en gras */
+    padding: 0.5rem 1rem;
+    /* espace intérieur du bouton */
+    border: 2px rgba(0, 0, 0, 0.2);
+    /* contour */
+    border-radius: 4px;
+    /* coins arrondis */
+    transition: background-color 0.2s;
+    /* effet doux sur hover */
+    z-index: 1;
+    /* s’assurer qu’il reste visible */
+}
+
+/* Changement de couleur au survol */
+.menu-links a:hover {
+    background-color: rgb(255, 255, 255);
+    /* fond blanc au survol */
+    color: #000000;
+    /* texte devient noir au survol */
+}
+
+/* Bouton "Réserver" (à droite) */
+.reserver {
+    font-size: 20px;
+    margin-right: 50px;
+    color: rgb(255, 255, 255);
+    /* texte blanc */
+    text-decoration: none;
+    /* pas de soulignement */
+    font-weight: bold;
+    /* texte en gras */
+    padding: 0.5rem 1rem;
+    /* espace intérieur du bouton */
+    border: 2px solid rgb(255, 255, 255);
+    /* contour */
+    border-radius: 4px;
+    /* coins arrondis */
+    transition: background-color 0.2s;
+    /* effet doux sur hover */
+    z-index: 1;
+    /* s’assurer qu’il reste visible */
+}
+
+/* Changement de couleur au survol */
+.reserver:hover {
+    background-color: rgb(255, 96, 96);
+    /* fond blanc au survol */
+    color: #000000;
+    /* texte devient noir au survol */
+    border: 2px solid rgb(255, 96, 96);
+}
+
+/* Pour la section hero */
+.hero {
+    display: flex;
+    flex: 1;
+    /* Ajuste selon la hauteur de ton header */
+    width: 100%;
+}
+
+/* Partie droite */
+.hero-right {
+    width: 50%;
+    height: 100%;
+}
+
+.hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Pour que l’image remplisse sans se déformer */
+}
+
+.hero-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* aligné à gauche */
+    padding: 10rem;
+    color: white;
+    text-align: left;
+}
+
+.badge {
+    background-color: rgba(165, 98, 98, 0.15);
+    color: rgb(255, 96, 96);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.hero-left-title h1 {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: serif;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+.hero-left-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    font-size: 25px;
+    background-color: rgb(29, 29, 29);
+    color: #ffffff;
+    border: 2px solid rgb(255, 255, 255);
+    /* contour */
+    border-radius: 4px;
+    /* coins arrondis */
+    transition: background-color 0.2s;
+    /* effet doux sur hover */
+}
+
+.btn-primary:hover {
+    background-color: rgb(255, 96, 96);
+    /* fond blanc au survol */
+    color: #000000;
+    /* texte devient noir au survol */
+    border: 2px solid rgb(255, 96, 96);
+}
+
+.btn-outline {
+    font-size: 25px;
+    border: 2px solid rgb(255, 96, 96);
+    color:rgb(255, 255, 255);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(29, 29, 29);
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-left {
+    animation: fadeSlideIn 1s ease-out forwards;
+    opacity: 0;
+    /* Sera animé jusqu’à 1 */ }
+
+.titre-page {
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+    text-align: center;
+    padding: 120px 20px;
+}
+
+
+.ligne-soustitre {
+    width: 800px;
+    /* largeur de la ligne */
+    height: 2px;
+    /* épaisseur de la ligne */
+    background-color: rgb(255, 96, 96);
+    /* couleur dorée */
+    margin: 20px auto 0;
+    /* centrer avec un espace au-dessus */ 
+    opacity: 0;
+    animation: fadeInTitle 1s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.boutons-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.menu-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: rgb(29, 29, 29);
+    color: white;
+}
+
+.menu-section h2 {
+    margin-top: 100px;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.images-menu {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.images-menu img {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.images-menu img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    } }
+
+.titre-page h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+
+    opacity: 0;
+    animation: fadeInTitle 1s ease-out forwards;
+    animation-delay: 0.2s;     }
+
+.reseaux-sociaux {
+    margin-top: 2rem;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.reseaux-sociaux img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.reseaux-sociaux img:hover {
+    transform: scale(1.2);    
+}
+
+.horaire {
+    margin: 2rem auto;
+    border-collapse: collapse;
+    color: #ddd;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    background-color: rgb(44, 44, 44);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.horaire td {
+    padding: 0.5rem 2rem;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.horaire td:last-child {
+    text-align: right;
+}
+
+.horaire tr strong {
+    color: white;
+}
+
+/* 👇 Effet au survol */
+.horaire tr:hover td {
+    transform: scale(1.05);
+    font-weight: bold;
+    color: white;
+    background-color: rgb(45, 45, 45);
+}
+
+.heures {
+    text-align: center;
+}
+
+.heures h2 {
+    color: white;
+}
+
+.contact-infos {
+    justify-content: center;
+    display: flex;
+    color: #ddd;
+    background-color: rgb(29, 29, 29);
+}
+
+.contact-infos h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.infos p {
+    text-align: left;
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+    padding: 20px;
+}
+
+.infos a {
+    color: rgb(255, 96, 96);
+    text-decoration: none;
+}
+
+.infos a:hover {
+    text-decoration: underline;
+}
+
+.carte {
+    padding: 60px 20px;
+    background-color: rgb(29, 29, 29);
+    text-align: center;
+    color: white;
+}
+
+.carte h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.carte-container {
+    max-width: 1000px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.grille-contact {
+    display: flex;
+    gap: 200px;
+    padding: 60px 20px;
+    background-color: rgb(29, 29, 29);
+    flex-wrap: wrap; 
+}
+
+.grille-contact>div {
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.02);
+    /* très léger fond translucide */
+    transition: border-color 0.3s ease;
+}
+
+.grille-contact>div:hover {
+    border-color: rgba(255, 96, 96, 0.6);
+}
+
+
+.titre-deco {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(255, 96, 96);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+    border-bottom: 3px solid rgb(255, 96, 96);
+    padding-bottom: 0.5rem; 
+}
+
+.images-repas {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.images-ligne {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.images-ligne img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
